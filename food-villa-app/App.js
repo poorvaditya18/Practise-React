@@ -636,7 +636,11 @@ const RestaurantCard = ({
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard
+      {restaurantList.map((restaurant) => {
+        return <RestaurantCard {...restaurant.data} />;
+      })}
+
+      {/* <RestaurantCard
         name={restaurantList[0].data.name}
         cloudinaryImageId={restaurantList[0].data.cloudinaryImageId}
       />
@@ -651,9 +655,10 @@ const Body = () => {
       <RestaurantCard
         name={restaurantList[3].data.name}
         cloudinaryImageId={restaurantList[3].data.cloudinaryImageId}
-      />
+      /> */}
+
       {/* Instead of passing them individually you can pass via spreadOf operator */}
-      <RestaurantCard {...restaurantList[4].data} />
+      {/* <RestaurantCard {...restaurantList[4].data} /> */}
     </div>
   );
 };
